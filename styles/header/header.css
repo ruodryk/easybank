@@ -1,0 +1,103 @@
+.header {
+    background-color: var(--white);
+    width: 100%;
+    position: fixed;
+    z-index: 30;
+}
+
+.header__content {
+    max-width: 128rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.header__list {
+    display: flex;
+    list-style: none;
+    gap: 4rem;
+}
+
+.header__link:link, .header__link:visited {
+    color: var(--grayishBlue);
+    text-decoration: none;
+    padding: 2.6rem 0;
+    border-bottom: 0.4rem solid var(--white);
+    transition: all 0.3s ease-in;
+}
+
+.header__link:hover, .header__link:active {
+    border-bottom: 0.4rem solid var(--limeGreen);
+    color: var(--darkBlue);
+}
+
+.header__ham{
+    display: none;
+    cursor: pointer;
+}
+
+.header__close{
+    display: none;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 900px){
+    .header__content {
+        padding: 2rem 6rem;
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .header__content .btn {
+        display: none;
+    }
+
+    .header__list {
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        flex-direction: column;
+        font-size: 24px;
+        z-index: 25;
+        width: 70%;
+        text-align: left;
+        background-color: rgba(26, 196, 72, 0.589);
+        backdrop-filter: blur(2rem);
+        justify-content: space-evenly;
+        transition: transform 0.5s ease-in;
+        transform: translateX(100%);
+    }
+
+    .header__link:link, .header__link:visited{
+        color: var(--white);
+        border: none;
+        font-size: 4rem;
+        padding-left: 6rem;
+    }
+
+    .header__ham {
+        display: block;
+        cursor: pointer;
+    }
+
+    .header__ham .header__ham_disable {
+        display: none;
+    }
+
+    .header__close {
+        position: absolute;
+        right: 6rem;
+        top: 6rem;
+        z-index: 99;
+        background-color: var(--white);
+        padding: 3rem;
+        border-radius: 8rem;
+    }
+
+    .header__close .header__close_active {
+        display: block;
+    }
+}
